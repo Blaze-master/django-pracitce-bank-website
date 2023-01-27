@@ -5,8 +5,11 @@ from django.urls import reverse
 from .models import *
 
 # Create your views here.
+def index(request):
+    return HttpResponseRedirect(reverse("account:login"))
+
 def login(request):
-    pass
+    return render(request, "account/login.html")
 
 def profile(request, accNo):
     pass
