@@ -2,4 +2,17 @@
 {% block title %} Login {% endblock %}
 {% block main_content %}
 <h1>This is the login page</h1>
+<form action="{% url 'account:createProfile' %}" method="post">
+    {% csrf_token %}
+    {% if error %}
+    <p style="color: red;">error</p>
+    {% endif %}
+    <ul>
+        <li><input type="text" name="firstname" id="" placeholder="First Name"></li>
+        <li><input type="text" name="lastname" id="" placeholder="Last Name"></li>
+        <li><input type="text" name="phoneno" id="" placeholder="Phone Number"></li>
+        <li><input type="email" name="email" id="" placeholder="Email"></li>
+    </ul>
+    <input type="submit" value="createProfile">
+</form>
 {% endblock %}

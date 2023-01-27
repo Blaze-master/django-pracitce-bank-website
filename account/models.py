@@ -2,12 +2,12 @@ from django.db import models
 
 # Create your models here.
 class UserAccount(models.Model):
-    accountNo = models.IntegerField(primary_key=True)
+    accountNo = models.AutoField(primary_key=True)
     firstName = models.CharField(max_length=100)
     lastName = models.CharField(max_length=100)
     phoneNo = models.IntegerField()
     email = models.EmailField()
-    money = models.IntegerField()
+    money = models.IntegerField(default=0)
 
 
 class UserTransaction(models.Model):
