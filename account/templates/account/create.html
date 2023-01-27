@@ -1,0 +1,19 @@
+{% extends "account/base.html" %}
+{% block title %} Create Account {% endblock %}
+{% block main_content %}
+<h1>Create an account</h1>
+<form action="{% url 'account:create' %}" method="post">
+    {% csrf_token %}
+    {% if error %}
+    <p style="color: red;">{{error}}</p>
+    {% endif %}
+    <ul>
+        <li><input type="text" name="firstname" id="" placeholder="First Name"></li>
+        <li><input type="text" name="lastname" id="" placeholder="Last Name"></li>
+        <li><input type="text" name="phoneno" id="" placeholder="Phone Number"></li>
+        <li><input type="email" name="email" id="" placeholder="Email"></li>
+        <li><input type="text" name="password" id="" placeholder="Password"></li>
+    </ul>
+    <input type="submit" value="Create">
+</form>
+{% endblock %}

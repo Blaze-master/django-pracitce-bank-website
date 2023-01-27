@@ -5,6 +5,7 @@ class UserAccount(models.Model):
     accountNo = models.AutoField(primary_key=True)
     firstName = models.CharField(max_length=100)
     lastName = models.CharField(max_length=100)
+    password = models.CharField(max_length=100, default="")
     phoneNo = models.IntegerField()
     email = models.EmailField()
     money = models.IntegerField(default=0)
